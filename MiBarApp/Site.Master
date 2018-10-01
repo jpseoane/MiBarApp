@@ -14,7 +14,13 @@
     </asp:PlaceHolder>
     <webopt:bundlereference runat="server" path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-
+    <script runat="server">
+        void LoginStatus1_LoggedOut(Object sender, System.EventArgs e)
+        {    
+            Application.Lock();
+            Application.UnLock();
+        }
+    </script>
 </head>
 <body>
     <form runat="server">
@@ -37,8 +43,7 @@
                 <%--Site Scripts--%>
             </Scripts>
         </asp:ScriptManager>
-
-           <div class="navbar navbar-inverse navbar-fixed-top ">
+        <div class="navbar navbar-inverse navbar-fixed-top ">
             <div class="container">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -47,7 +52,15 @@
                         <span class="icon-bar"></span>
                         
                     </button>
-                    <a class="navbar-brand" runat="server" href="~/">MiBar</a>                    
+                    <a class="navbar-brand" runat="server" href="~/">MiBar</a>  <br />
+                    <asp:LoginStatus  Font-Size="Smaller" ForeColor="White"  ID="LoginStatus1"
+                        loginText="Log In"
+                        logoutAction="Refresh" 
+                        logoutText="Log Out"
+                        runat="server" 
+                        onloggedout="LoginStatus1_LoggedOut"
+                        LogoutPageUrl="~/Default.aspx" /> <br />         
+                    <asp:LoginName  Font-Size="Smaller" ForeColor="White" ID="LoginName1" runat="server" />
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
@@ -57,7 +70,7 @@
                         <li><a runat="server" href="~/About">Ajustes</a></li>
                         <li><a runat="server" href="~/About">Acerca de</a></li>
                         <li><a runat="server" href="~/Contact">Contacto</a></li>
-                    </ul>                   
+                    </ul>                     
                 </div>
                 <div  class="navbar-collapse collapse">
                    <ul class="nav navbar-nav">
@@ -69,6 +82,8 @@
                     Text="Google" onclick="RedirectToLogin_Click" /></li>
                    </ul>
                 </div>
+            
+                
             </div>
         </div>
         <div class="container body-content">
