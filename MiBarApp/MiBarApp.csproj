@@ -57,6 +57,8 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
@@ -176,6 +178,16 @@
     <Content Include="Account\ResetPasswordConfirmation.aspx" />
     <Content Include="Account\TwoFactorAuthenticationSignIn.aspx" />
     <Content Include="Account\VerifyPhoneNumber.aspx" />
+    <Content Include="ADO\ModelMiBar.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelMiBar.edmx</DependentUpon>
+      <LastGenOutput>ModelMiBar.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="ADO\ModelMiBar.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelMiBar.edmx</DependentUpon>
+      <LastGenOutput>ModelMiBar.cs</LastGenOutput>
+    </Content>
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -199,6 +211,13 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Account\Web.config" />
+    <EntityDeploy Include="ADO\ModelMiBar.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ModelMiBar.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="ADO\ModelMiBar.edmx.diagram">
+      <DependentUpon>ModelMiBar.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -342,6 +361,39 @@
     <Compile Include="Account\VerifyPhoneNumber.aspx.designer.cs">
       <DependentUpon>VerifyPhoneNumber.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ADO\AspNetRoles.cs">
+      <DependentUpon>ModelMiBar.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ADO\AspNetUserClaims.cs">
+      <DependentUpon>ModelMiBar.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ADO\AspNetUserLogins.cs">
+      <DependentUpon>ModelMiBar.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ADO\AspNetUsers.cs">
+      <DependentUpon>ModelMiBar.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ADO\Employees.cs">
+      <DependentUpon>ModelMiBar.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ADO\Member.cs">
+      <DependentUpon>ModelMiBar.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ADO\ModelMiBar.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelMiBar.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ADO\ModelMiBar.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelMiBar.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ADO\ModelMiBar.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelMiBar.edmx</DependentUpon>
+    </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="About.aspx.cs">
       <DependentUpon>About.aspx</DependentUpon>
@@ -417,7 +469,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="ADO\" />
     <Folder Include="App_Data\" />
     <Folder Include="Model\" />
   </ItemGroup>
@@ -431,6 +482,9 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
