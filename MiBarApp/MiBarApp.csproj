@@ -249,8 +249,10 @@
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
     <Content Include="Site.Master" />
     <Content Include="ViewSwitcher.ascx" />
+    <Content Include="Views\admin\addmesa.aspx" />
+    <Content Include="Views\asignausuariomesa.aspx" />
     <Content Include="Views\gpedido.aspx" />
-    <Content Include="Views\qr.aspx" />
+    <Content Include="Views\admin\mesas.aspx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
     <Content Include="Site.Mobile.Master" />
@@ -361,6 +363,9 @@
     <Compile Include="Account\VerifyPhoneNumber.aspx.designer.cs">
       <DependentUpon>VerifyPhoneNumber.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ADO\Ajustes.cs">
+      <DependentUpon>ModelMiBar.tt</DependentUpon>
+    </Compile>
     <Compile Include="ADO\AspNetRoles.cs">
       <DependentUpon>ModelMiBar.tt</DependentUpon>
     </Compile>
@@ -373,10 +378,16 @@
     <Compile Include="ADO\AspNetUsers.cs">
       <DependentUpon>ModelMiBar.tt</DependentUpon>
     </Compile>
+    <Compile Include="ADO\Carta.cs">
+      <DependentUpon>ModelMiBar.tt</DependentUpon>
+    </Compile>
     <Compile Include="ADO\Employees.cs">
       <DependentUpon>ModelMiBar.tt</DependentUpon>
     </Compile>
     <Compile Include="ADO\Member.cs">
+      <DependentUpon>ModelMiBar.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ADO\Mesa.cs">
       <DependentUpon>ModelMiBar.tt</DependentUpon>
     </Compile>
     <Compile Include="ADO\ModelMiBar.Context.cs">
@@ -393,6 +404,21 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ModelMiBar.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="ADO\Producto.cs">
+      <DependentUpon>ModelMiBar.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ADO\QR.cs">
+      <DependentUpon>ModelMiBar.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ADO\SubTipo.cs">
+      <DependentUpon>ModelMiBar.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ADO\sysdiagrams.cs">
+      <DependentUpon>ModelMiBar.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ADO\TipoProducto.cs">
+      <DependentUpon>ModelMiBar.tt</DependentUpon>
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="About.aspx.cs">
@@ -453,6 +479,20 @@
     <Compile Include="ViewSwitcher.ascx.designer.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Views\admin\addmesa.aspx.cs">
+      <DependentUpon>addmesa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\admin\addmesa.aspx.designer.cs">
+      <DependentUpon>addmesa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\asignausuariomesa.aspx.cs">
+      <DependentUpon>asignausuariomesa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\asignausuariomesa.aspx.designer.cs">
+      <DependentUpon>asignausuariomesa.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Views\gpedido.aspx.cs">
       <DependentUpon>gpedido.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -460,12 +500,12 @@
     <Compile Include="Views\gpedido.aspx.designer.cs">
       <DependentUpon>gpedido.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Views\qr.aspx.cs">
-      <DependentUpon>qr.aspx</DependentUpon>
+    <Compile Include="Views\admin\mesas.aspx.cs">
+      <DependentUpon>mesas.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Views\qr.aspx.designer.cs">
-      <DependentUpon>qr.aspx</DependentUpon>
+    <Compile Include="Views\admin\mesas.aspx.designer.cs">
+      <DependentUpon>mesas.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

@@ -31,5 +31,13 @@ namespace MiBarApp.ADO
         public virtual DbSet<AspNetUsers> AspNetUsers { get; set; }
         public virtual DbSet<Employees> Employees { get; set; }
         public virtual DbSet<Member> Member { get; set; }
+        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
+        public virtual DbSet<Ajustes> Ajustes { get; set; }
+        public virtual DbSet<Carta> Carta { get; set; }
+        public virtual DbSet<Mesa> Mesa { get; set; }
+        public virtual DbSet<Producto> Producto { get; set; }
+        public virtual DbSet<SubTipo> SubTipo { get; set; }
+        public virtual DbSet<TipoProducto> TipoProducto { get; set; }
+        public virtual DbSet<QR> QR { get; set; }
     }
 }
